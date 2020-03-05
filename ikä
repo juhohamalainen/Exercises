@@ -1,0 +1,52 @@
+            //Ohjelma laskee, mitä syntymäpäivää käyttäjä tänä vuonna viettää laskemalla: 2019 - käyttäjän antama ikä.
+            //Muuttaa tulostusta siten, että jos käyttäjä kirjoitti "n", tulostuksessa lukee "nainen"
+            //ja jos käyttäjä kirjoitti "m", tulostuksessa lukee "mies".
+            
+            
+            string nimi;
+
+            int syntyma;
+
+            string sukupuoli;
+
+            int vuosi;
+
+            int synttari;
+
+
+
+            vuosi = 2019;
+
+            Console.WriteLine("Anna nimesi");
+
+            nimi = Console.ReadLine();
+
+            Console.WriteLine("Anna syntymävuotesi");
+
+            syntyma = int.Parse(Console.ReadLine());
+
+            synttari = vuosi - syntyma;
+
+            Console.WriteLine("Anna sukupuolesi, m = mies, n = nainen");
+
+            sukupuoli = Console.ReadLine();
+
+            if (sukupuoli == "m" || sukupuoli == "mies")
+
+            {
+
+                sukupuoli = "mies";
+
+                Console.WriteLine(nimi + ", olet " + sukupuoli + " ja vietät tänävuonna " + synttari + "-vuotis syntymäpäiviä!");
+
+            }
+
+            else if (sukupuoli == "n" || sukupuoli == "nainen")
+
+            {
+
+                sukupuoli = "nainen";
+
+                Console.WriteLine(nimi + ", olet " + sukupuoli + " ja vietät tänävuonna " + synttari + "-vuotis syntymäpäiviä!");
+
+            }
