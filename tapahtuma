@@ -1,0 +1,125 @@
+// Toinen olio tentti
+
+
+using System;
+
+
+
+namespace OlioTentti2
+
+{
+
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            TapahtumaArtikkeli tapahtuma1 = new TapahtumaArtikkeli("Stam1na", 20);
+
+            TapahtumaArtikkeli tapahtuma2 = new TapahtumaArtikkeli("JVG", 30);
+
+            tapahtuma1.TulostaTiedot();
+
+            tapahtuma2.TulostaTiedot();
+
+
+
+            Console.WriteLine("Luotujen tapahtumien lukumäärä: " + TapahtumaArtikkeli.tapahtumienLukumaara);
+
+        }
+
+    }
+
+
+    class Artikkeli
+
+    {
+
+        public string otsikko;
+
+
+
+        public Artikkeli()
+
+        {
+
+            otsikko = "null";
+
+
+
+        }
+
+
+        public Artikkeli(string otsikko)
+
+        {
+
+            this.otsikko = otsikko;
+
+        }
+
+
+        public void TulostaTiedot()
+
+        {
+
+            Console.WriteLine(otsikko);
+
+        }
+
+
+
+    }
+
+
+
+    class TapahtumaArtikkeli : Artikkeli
+
+    {
+
+        public int lipunHinta;
+
+        public static int tapahtumienLukumaara;
+
+
+
+        public TapahtumaArtikkeli() : base()
+
+        {
+
+            lipunHinta = 0;
+
+            tapahtumienLukumaara++;
+
+        }
+
+
+        public TapahtumaArtikkeli(string otsikko, int lipunHinta) : base()
+
+        {
+
+            this.otsikko = otsikko;
+
+            this.lipunHinta = lipunHinta;
+
+            tapahtumienLukumaara++;
+
+        }
+
+
+        public new void TulostaTiedot()
+
+        {
+
+            Console.WriteLine(otsikko);
+
+            Console.WriteLine("Lipun hinta: " + lipunHinta + " euroa");
+
+        }
+
+    }
+
+}
