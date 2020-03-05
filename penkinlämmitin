@@ -1,0 +1,98 @@
+// Olio-ohjelmoinnin tentti jossa tehtävänä oli penkinlämmitin jolla voi vaihtaa tehoa asteikolla 0-3
+// (3 jälkeen siirtyy takaisin 0)
+
+using System;
+
+namespace PenkinLammitin
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PenkinLammitin penkinlammitin1 = new PenkinLammitin();
+
+            Console.WriteLine(penkinlammitin1.Teho);
+
+            penkinlammitin1.MuutaTehoa();
+            penkinlammitin1.MuutaTehoa();
+            penkinlammitin1.MuutaTehoa();
+            penkinlammitin1.MuutaTehoa();
+            penkinlammitin1.MuutaTehoa();
+
+            Console.WriteLine("Paina x muuttaaksesi tehoa");
+            Console.WriteLine("Poistuaksesi, kirjoita: poistu");
+
+            string muuta;
+
+            do
+            {
+                muuta = Console.ReadLine();
+                if (muuta == "x")
+                {
+                    penkinlammitin1.MuutaTehoa();
+                }
+                else if (muuta == "poistu")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Virhe!");
+                }
+            } while (muuta != "poistu");
+
+            
+            
+        }
+    }
+
+    class PenkinLammitin
+    {
+        private int teho;
+
+        public int Teho
+        {
+            get
+            {
+                return teho;
+            }
+        }
+
+        public PenkinLammitin()
+        {
+            teho = 0;
+        }
+
+        public void MuutaTehoa()
+        {
+            teho++;
+            if (teho > 3)
+            {
+                teho = 0;
+            }
+            NaytaLedit();
+        }
+
+        private void NaytaLedit()
+        {
+            if (teho == 0)
+            {
+                Console.WriteLine("Sammutettu");
+            }
+            if(teho == 1)
+            {
+                Console.WriteLine("*");
+            }
+            if (teho == 2)
+            {
+                Console.WriteLine("**");
+            }
+            if (teho == 3)
+            {
+                Console.WriteLine("***");
+            }
+               
+            
+        }
+    }
+}
