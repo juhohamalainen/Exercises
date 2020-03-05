@@ -1,0 +1,62 @@
+// Tee TulostaOtsikko-niminen funktio, joka tulostaa konsoliin otsikon: "Celsius Fahrenheiteiksi".
+// Kysy käyttäjältä Mainissä lämpötila.
+// Tee MuunnaLampotila-niminen funktio. Lähetä funktiolle käyttäjän antama lämpötila.
+// Muunna lämpötila funktiossa ja tulosta tulos funktiossa
+// TAI palauta tulos ja tulosta se Mainissä (jälkimmäisestä saa enemmän pisteitä).
+
+
+
+using System;
+
+
+
+namespace ArvioitavaTehtava2
+
+{
+
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            // Arvioitava tehtävä 2. Juho Hämäläinen
+
+
+            Tulostaotsikko();
+
+            Console.WriteLine("Anna lämpötila (celsius)");
+
+            double lampotila = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Lämpötila on fahrenheiteina " + MuunnaLampotila(lampotila));
+
+        } //Mainin loppu
+
+
+
+        public static void Tulostaotsikko()
+
+        {
+
+            Console.WriteLine("Celsius Fahrenheiteiksi");
+
+        }
+
+
+
+        public static double MuunnaLampotila(double cels)
+
+        {
+
+            double fahr = cels * 9 / 5 + 32;
+
+            return fahr;
+
+        }
+
+    }
+
+}
