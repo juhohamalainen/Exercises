@@ -1,0 +1,81 @@
+using System;
+using System.Threading;
+namespace muistipeli
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Muistipeli 2");
+            Console.WriteLine();
+
+            int counter = 0;
+
+            int[] numero;
+            numero = new int[7];
+
+            int[] arvaus;
+            arvaus = new int[7];
+
+            string[] rivit;
+            rivit = new string[7];
+
+            rivit[0] = "1.";
+            rivit[1] = "2.";
+            rivit[2] = "3.";
+            rivit[3] = "4.";
+            rivit[4] = "5.";
+            rivit[5] = "6.";
+            rivit[6] = "7.";
+
+
+            Random random = new Random();
+
+            for (int i = 0; i < numero.Length; i++)
+            {
+                numero[i] = (random.Next(1, 6));
+                Console.Write(numero[i] + " ");
+            }
+
+            Thread.Sleep(5000);
+
+            Console.Clear();
+
+
+            for (int i = 0; i < rivit.Length; i++)
+            {
+                Console.Write("Kirjoita numero ");
+                Console.WriteLine(rivit[i]);
+                arvaus[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("Oikeat numerot olivat: ");
+
+            for (int i = 0; i < numero.Length; i++)
+            {
+                Console.Write(numero[i] + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Sinun numerosi olivat: ");
+            for (int i = 0; i < arvaus.Length; i++)
+            {
+                Console.Write(arvaus[i] + " ");
+            }
+
+            for (int i = 0; i < rivit.Length; i++)
+            {
+                if (numero[i] == arvaus[i])
+                {
+                    counter++;
+                }
+
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Sait " + counter + "/7 oikein!");
+
+
+        }
+    }
+}
