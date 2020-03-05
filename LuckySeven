@@ -1,0 +1,95 @@
+using System;
+
+namespace luckySeven
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            Console.WriteLine("LUCKY SEVEN");
+            Console.WriteLine("");
+            Console.WriteLine("7 7 7 = 3€");
+            Console.WriteLine("  7 7 = 2€");
+            Console.WriteLine("    7 = 1€");
+            Console.WriteLine("");
+            Random random = new Random();
+            int numero1;
+            int numero2;
+            int numero3;
+            int raha;
+            string vastaus;
+
+            Console.WriteLine("Syötä rahasumma euroina");
+            raha = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
+            Console.WriteLine("Pelivaraukset: " + raha + "€");
+            Console.WriteLine("Panos: 1€");
+            Console.WriteLine("");
+
+            do
+            {
+                raha--;
+
+                Console.ForegroundColor = ConsoleColor.Red;
+
+                numero1 = random.Next(1, 11);
+                Console.WriteLine(numero1);
+
+                numero2 = random.Next(1, 11);
+                Console.WriteLine(numero2);
+
+                numero3 = random.Next(1, 11);
+                Console.WriteLine(numero3);
+
+                Console.ResetColor();
+
+                Console.WriteLine("");
+
+                if (numero1 == 7 && numero2 == 7 && numero3 == 7)
+                {
+                    Console.WriteLine("Voitit 100€!");
+                    raha = raha + 3;
+                }
+                else if (numero1 == 7 && numero2 == numero1 || numero2 == 7 && numero1 == numero2 || numero3 ==7 && numero2 == numero3 || numero3 == 7 && numero1 == numero3)
+                {
+                    Console.WriteLine("Voitit 5€!");
+                    raha = raha + 2;
+                }
+                else if (numero1 == 7 || numero2 == 7 || numero3 == 7)
+                {
+                    Console.WriteLine("Voitit 1€!");
+                    raha++;
+                }
+
+                else
+                {
+                    Console.WriteLine("Hävisit!");
+                }
+
+                Console.WriteLine("Pelivaraukset: " + raha + "€");
+
+                if (raha < 1)
+                {
+                    break;
+                }
+                Console.WriteLine("Pelataanko uudestaan? k/e");
+                vastaus = Console.ReadLine();
+                if (vastaus == "k")
+                {
+
+                }
+                else
+                { 
+                    break;
+                }
+                Console.WriteLine("");
+            } while (raha > 0);
+
+            Console.WriteLine("Peli loppui!");
+
+            
+        }
+    }
+}
