@@ -1,0 +1,82 @@
+//Tee ohjelma, jolla kirjataan yhden pituushyppääjän hyppytulokset (3 hyppykierrosta). Huom! Ei tarvitse käyttää desimaaleja.
+
+//1.       Tee taulukko, jossa on kolme solua. (1 piste)
+
+//2.       Pyydä käyttäjää syöttämään hyppyjen pituudet. (1 piste. Jos ei ole for-loopissa: 0,5 pistettä.)
+
+//3.       Lisää edelliseen 1., 2. ja 3. (ks. esimerkkikuva tehtävän lopusta). (1 piste)
+
+//4.       Lajittele (sort) tulokset pienimmästä suurimpaan. Saatat joutua vähän googlailemaan. (1 piste)
+
+//5.       Tulosta koko taulukko. (1 piste)
+
+//6.       Lisäpiste: Laske hyppyjen keskiarvo ja tulosta se. (1 piste)
+
+
+
+
+using System;
+
+using System.Linq;
+
+namespace Arvioitavatehtava1
+
+{
+
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            Console.WriteLine("Arvioitavatehtava1");
+
+
+            int[] pituus;
+
+            pituus = new int[3];
+
+            int i;
+
+            int plus = 1;
+
+
+            for (i = 0; i < pituus.Length; i++)
+
+            {
+
+                Console.WriteLine("Kirjoita " + plus +  ". hypyn pituus");
+
+                pituus[i] = int.Parse(Console.ReadLine());
+
+                plus++;
+
+            }
+
+
+            Console.WriteLine("Hyppyjen tulokset pienimmästä suurimpaan: ");
+
+
+            for (i = 0; i < pituus.Length; i++)
+
+            {
+
+                Array.Sort(pituus);
+
+                Console.WriteLine(pituus[i]);
+
+            }
+
+
+            Console.WriteLine("Hyppyjen keskiarvo on: ");
+
+            Console.WriteLine(pituus.Average()); 
+
+
+        }
+
+    }
+
+}
